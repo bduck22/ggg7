@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Attack
   - Ettak
+  - --------------
+  - Plant
+  - House
+  - Farm
   layers:
   - Default
   - TransparentFX

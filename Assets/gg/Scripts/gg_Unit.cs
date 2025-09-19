@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UnitType
+public enum gg_UnitType
 {
     Knight,
     Archer,
     Mage
 }
-public class Unit : MonoBehaviour
+public class gg_Unit : MonoBehaviour
 {
     public float Damage;
     public float Hp
@@ -95,7 +95,7 @@ public class Unit : MonoBehaviour
     public Rigidbody rb;
     public Animator animator;
 
-    public UnitType Type;
+    public gg_UnitType Type;
 
     public GameObject AttackPre;
     void Start()
@@ -145,7 +145,7 @@ public class Unit : MonoBehaviour
         attacktime = 0;
         animator.SetTrigger("Attack");
 
-        Attack attack = Instantiate(AttackPre, transform.position, transform.rotation).GetComponentInChildren<Attack>();
+        gg_Attack attack = Instantiate(AttackPre, transform.position, transform.rotation).GetComponentInChildren<gg_Attack>();
         Destroy(attack.gameObject, 0.5f);
         attack.Damage = Damage;
         attack.Weight = 1;

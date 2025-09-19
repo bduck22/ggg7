@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class gg_Player : MonoBehaviour
 {
     public Vector3 OriPosition;
 
     public int NowUnitNum;
-    public Unit[] Units;
+    public gg_Unit[] Units;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class gg_Attack : MonoBehaviour
 {
     public float Damage;
     public float Weight;

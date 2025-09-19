@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class gg_Enemy : MonoBehaviour
 {
     
     void Start()
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Attack"))
         {
-            Debug.Log(other.GetComponentInChildren<Attack>().Damage);
+            Debug.Log(other.GetComponentInChildren<gg_Attack>().Damage);
         }
     }
 }
