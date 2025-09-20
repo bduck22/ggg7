@@ -17,6 +17,7 @@ public class gb_Plant
     public gb_PlantType type;
     public float maxGlow;
     public float Glow;
+    public GameObject plantObject;
 }
 
 public class gb_Tile : MonoBehaviour
@@ -61,6 +62,42 @@ public class gb_Tile : MonoBehaviour
 
 
             WaterSlider.value = water;
+        }
+    }
+
+    public void Glow(int value)
+    {
+        foreach (gb_Plant plant in plants)
+        {
+            if (plant.type != gb_PlantType.None)
+            {
+                bool isglow = true;
+                switch (plant.type)
+                {
+                    case gb_PlantType.Potato:
+                        break;
+                    case gb_PlantType.Carrot:
+                        break;
+                    case gb_PlantType.Tomato:
+                        break;
+                    case gb_PlantType.Garic:
+                        break;
+                    case gb_PlantType.Onion:
+                        break;
+                }
+                if (isglow)
+                {
+                    if(plant.Glow >= plant.maxGlow)
+                    {
+                        plant.Glow = plant.maxGlow;   
+                    }
+                    else
+                    {
+                        plant.Glow += value;
+                    }
+                }
+                plant.plantObject.transform.localScale = new Vector3(1+(plant.Glow/plant.maxGlow)*1.5f,1+ (plant.Glow / plant.maxGlow) * 1.5f, 1+(plant.Glow / plant.maxGlow) * 1.5f);
+            }
         }
     }
 
@@ -118,5 +155,6 @@ public class gb_Tile : MonoBehaviour
                 plants[tilenum].maxGlow = 60;
                 break;
         }
+        plants[tilenum].plantObject = Instantiate(gb_GameManager.Instance.seeds[vagetype], transform.GetChild(0).GetChild(tilenum).transform.position, Quaternion.identity);
     }
 }

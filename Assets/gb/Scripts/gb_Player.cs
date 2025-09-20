@@ -30,6 +30,7 @@ public class gb_Player : MonoBehaviour
     public Transform getbutton;
     public Transform toolbutton;
 
+    public float Hp;
     void Update()
     {
         if (!stop)
@@ -95,7 +96,7 @@ public class gb_Player : MonoBehaviour
                 }
                 else
                 {
-                    
+                    getbutton.gameObject.SetActive(false);
                 }
             }
             else
@@ -135,6 +136,18 @@ public class gb_Player : MonoBehaviour
 
     public void Setplant(int num)
     {
-        nowTile.setplant(num, NowPlant);
+        if (gb_GameManager.Instance.seedcounts[num] > 0)
+        {
+            gb_GameManager.Instance.seedcounts[num]--;
+        }
+        else
+        {
+
+        }
+
+        if (nowTile.plants[NowPlant].type == gb_PlantType.None)
+        {
+            nowTile.setplant(num, NowPlant);
+        }
     }
 }
